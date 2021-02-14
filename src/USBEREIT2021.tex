@@ -210,8 +210,8 @@ The parameters of the sphere and ellipsoid were obtained by approximating 3D mod
 The sphere was approximated by the criterion of the least square deviation of the sphere boundaries and real 3D geometry.
 
 Approximation criterion \ref{eq:sphere_criteria},
-$ p_i$ - a finite set of points on the surface of a 3D heart model,
-$dist(p_i,Z(f))$ -  distance from the point $ p_i $ to the surface of the sphere $ Z (f) $. 
+$p_i$ - a finite set of points on the surface of a 3D heart model,
+$dist(p_i,Z(f))$ -  distance from the point $p_i$ to the surface of the sphere $Z(f)$. 
 \begin{equation}
     \sum_{i=1}^{q}dist(p_i,Z(f))^2 \rightarrow min
     \label{eq:sphere_criteria}
@@ -220,7 +220,7 @@ $dist(p_i,Z(f))$ -  distance from the point $ p_i $ to the surface of the sphere
 The ellipsoid was obtained according to the criterion described in . 
 %todo добавить ссылку на статью BOOK
 The method is peculiar because authors consider the distance from a point to the
-ellipsoid $ dist (p_i, Z (f)) $ as follows: the difference between 1) the
+ellipsoid $dist(p_i, Z(f))$ as follows: the difference between 1) the
 distance from the center of the ellipsoid to the point and 2) the distance from
 the center of the ellipsoid to a point on its boundary. The said point is lying
 on the ray outgoing their center and passing through a given point. This
@@ -369,26 +369,42 @@ the cardiac cycle from R-wave to R-wave.
 
 \section{Discussion}
 
-При сравнении движения центра масс исходной 3D модели и аппроксимирующей сферы и эллипсоида из Рис.\ref{fig:rxyz} видно,
-что центр масс эллипсоида движется в соответствии с центром масс 3D модели.
-Движение сферы качественно соответствует движению 3D модели, но количественно отличается - менее амплитудное.
-Объем эллипсоида отличается в среднем на 3-5\% в ходе сердечного цикла, для сферы разница достигает 12-15\%.
-Это может оказать влияние и внести дополнительную погрешность при оценке гемодинамических характеристик на основе геометрической модели сферы.
+When comparing the motion of the center of mass of the original 3D model and the
+approximating sphere and ellipsoid from Fig. \ref{fig:rxyz} it is seen that the
+center of mass of the ellipsoid moves in accordance with the center of mass of
+the 3D model. The sphere's movement qualitatively corresponds to the movement of
+the 3D model, but quantitatively it differs - less amplitude. The ellipsoid
+volume differs by an average of 3-5\% during the cardiac cycle; for a sphere,
+the difference reaches 12-15\%. This effect can influence and introduce
+additional errors in assessing hemodynamic characteristics based on the sphere's
+geometric model.
 
-Формы сигналов электроримпедансного моделирования для сферы и эллипсоида качественно соответсвуют форме сигнала для исходной 3D модели, но значительно отличаются по амплитудным характеристикам.
-Для численной оценки полученных результатов моделирования сравнивалось значение изменения импеданса в ходе систолы желудочков $\Delta Z$.
-То есть разности значений  на Рис.\ref{real}  в моменты времени соответствующие 0\% и 40\% кардиоцикла (начало и окончание систолы желудочков).
-При малых значениях электродных систем (80-120 мм) $\Delta Z$ для 3D модели отличается на \%  от $\Delta Z$ для сферы и на \% от $\Delta Z$ для эллипсоида.
-При больших значениях электродных систем (200-240 мм) $\Delta Z$ для 3D модели отличается на \%  от $\Delta Z$ для сферы и на \% от $\Delta Z$ для эллипсоида.
-%todo заполнить проценты
+The waveforms of the electrical impedance modeling signal for the sphere and the
+ellipsoid qualitatively correspond to the initial 3D model waveform but differ
+significantly in amplitude characteristics. For a numerical assessment of the
+obtained simulation results, the value of the impedance change during
+ventricular systole $ \ Delta Z $ was compared. The difference in values ​​in
+Fig.\ref{real} at the time points corresponds to 0\% and 40\% of the cardiac
+cycle (beginning and end of ventricular systole). For small electrode systems
+(80-120 mm), $\Delta Z$ for a 3D model differs by \% from $\Delta Z $ for a
+sphere and \% from $\Delta Z$ for an ellipsoid. For large electrode systems
+(200-240 mm), $\Delta Z$ for a 3D model differs by \% from $\ Delta Z$ for a
+sphere and \% from $\Delta Z $ for an ellipsoid.%todo заполнить проценты
 
 \section{Conclusion}
 
-Проведенные исследования показали, что для данного добровольца эллиптическая геометрическая модель крови сердца аппроксимирует реальную 3D геометрию сердца с погрешностью 3-5\% и является предпочтительной, при оценке гемодинамических параметров.
-При этом электроимпедансное моделирование показало, что при использовании электродных систем размером 80--120 мм предпочтительно использовать эллиптическую геометрическую модель, а при использовании больших электродных систем 200--240 мм предпочтительно использовать сферическую геометрическую модель.
-Так как для прекардиального продольно-поперечного картирования, как правило, используются электродные системы с размерами свыше 180 мм, то необходимо использовать сферическую математическую модель.
+Studies have shown that for a given volunteer, an elliptical geometric model of
+the heart's blood approximates the heart's real 3D geometry with an error of
+3-5\% and is preferable when assessing hemodynamic parameters. Simultaneously,
+electrical impedance modeling showed that when using electrode systems 80-120 mm
+in size, it is preferable to use an elliptical geometric model, and when using
+large electrode systems 200-240 mm, it is preferable to use a spherical
+geometric model. Since electrode systems with sizes over 180 mm are usually used
+for precordial longitudinal-transverse mapping, it is necessary to use a
+spherical mathematical model.
 
-Указанные выводы верны для данного добровольца. На данный момент проводятся исследования еще для трех здоровых добровольцев, чтобы оценить полученные выводы.
+The conclusions are valid for this volunteer. At the moment, studies are
+underway on three more healthy volunteers to evaluate the findings. 
 %An excellent style manual for science writers is \cite{b7}.
 
 \begin{thebibliography}{00}
