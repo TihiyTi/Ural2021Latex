@@ -231,7 +231,7 @@ the least square method (2).
 Analysis of the results and visualization of the approximation showed that the
 septa of the heart, such as the interventricular septum, 
 %todo ссылка на рисунок модели серца
-the atrioventricular septum (Fig.~\ref{fig: wall}) forms points that distort
+the atrioventricular septum (Fig.~\ref{fig:wall}) forms points that distort
 the approximation results, causing an increase in the average deviation of the
 surface of the approximating ellipse or sphere from the outer boundary of the 3D
 blood model. 
@@ -267,20 +267,25 @@ was going to the 3D image of the heart (Fig.~\ref{fig:algo2}).
     \label{fig:algo2}
 \end{figure}
 
-\section{Моделирование}
-\section{Параметры электроимпедансного моделирования}
-Для анализа полученных геометрических моделей проводилось электроимпедансное моделирование в среде конечно-элементного анализа Comsol Multiphisics.
-Расположение электродных систем при моделировании соответствовало расположению электродных систем при продольно-поперечном картировании. Расстояние между токовыми электродами варьировалось от 80 до 240 мм, а отношение расстояния между токовыми электродами к расстоянию между потенциальными составляло 2 к 1.
+\section{Modelling}
+\section{Electrical Impedance modelling parameters}
+To analyze the obtained geometric models, electrical impedance modeling was
+carried out in the Comsol Multiphysics CAD. The location of the electrode
+systems during modeling corresponded to the location of the electrode systems
+during longitudinal-transverse mapping. The distance between the current
+electrodes varied from 80 to 240 mm, and the ratio of the distance between the
+current electrodes to the distance between the potential ones was 2 to 1.
 
-Значения удельных сопротивлений включения и однородного полупространства представлены в таблице \ref{tab:table}.
+Values of resistivity of inclusion and homogeneous half-space are presented in
+the table \ref{tab:table}.
 
 \begin{table}[htbp]
-    \caption{RESISTIVITY VALUES AT 100 KHZ USED IN THE MODEL STUDY}
+    \caption{Resisitivity values at  100 kHz used in the model study}
     \begin{center}
         \begin{tabular}{|l|c|c|}
             \hline
             \multirow{2}{*}{\textbf{Tissue}}              &     \textbf{Resistivity values,}      &    \textbf{Resistivity value in}  \\
-            &    \textbf{ Omh*m}     &   \textbf{ simulation, Omh*m }\\
+            &    \Omega \cdot \textbf{m}     &   \textbf{ simulation, } \Omega \cdot \textbf{m }\\
             \hline
             Blood (Hct=50)           & 1.35 [21]           & 1.35      \\
             \hline
@@ -303,31 +308,43 @@ was going to the 3D image of the heart (Fig.~\ref{fig:algo2}).
 \end{table}
 %todo поправить список литературы в таблице
 
-Усреднение удельных сопротивлений легочной, мышечной ткани и миокарда возможно, так как рассматриваются измерения в фазу спокойного выдоха, а удельное сопротивление легочной ткани на выдохе приближается к удельному сопротивлению мышечной ткани.
+The averaging of the specific resistances of the lung, muscle tissue, and
+myocardium is possible since measurements are considered in the phase of calm
+expiration, and the specific resistance of the lung tissue on expiration
+approaches the specific resistance of muscle tissue. 
 
-\subsection{Сравние 3D моели со сферой и эллипсоидом}
+\subsection{Comparison of the 3D model with sphere and ellipsoid}
 
-По нескольким параметрам сравнивались сами модели и результаты моделирования реальной 3D геометрии крови в сердце, сферы и эллипсоида.
-Во-первых, производилось сравнение изменения объема крови в сердце, то есть объема реальной 3D модели, с объемами аппроксимирующих сферы и эллипса. Оценка объемов производилась для каждого из 20 моментов времени, на которые разбивался кардиоцикл.
-Во-вторых, рассматривалось движение объема крови в сердце в целом, то есть движение центра масс реальной 3D модели и аппроксимирующих её фигур.
-В- третьих, сравнивались зависимости изменения импеданса в ходе сердечного цикла для различных расположений и размеров электродных систем.
+Several parameters were used to compare the models themselves and the results of
+modeling the real 3D geometry of blood in the heart, sphere, and ellipsoid.
+First, a comparison of the change in the volume of blood in the heart  was made.
+the volume of a real 3D model was compared with the volumes of the approximating
+sphere and ellipsoid. The volumes were estimated for each of the 20 points when
+the cardio cycle was split. Second, the movement of blood volume in the heart as
+a whole was considered, i.e. the movement of the center of mass of a real 3D
+model and its approximating figures. Third, the electrical impedance change
+dependencies during the cardiac cycle were compared for different positions and
+sizes of electrode systems.
 
 \begin{figure}[htbp]
 %    \centerline{\includegraphics{fig/fig1.png}}
     \centering{\includegraphics[width=\linewidth]{fig/1_4}}
-    \caption{Изменение в ходе сердечного цикла координат центра масс (X, Y, Z) и объема исходной 3D модели, сферы и эллипсоида}
+    \caption{Change during the cardiac cycle of the coordinates of the center of mass (X, Y, Z) and volume of the original 3D model, sphere and ellipsoid }
     \label{fig:rxyz}
 \end{figure}
 
 \section{Results}
 
-Зависимости изменения объема и координат центра масс исходной 3D модели и аппроксимирующей сферы и эллипсоида представлены на Рис.~\ref{fig:rxyz},
-где на временной шкале сердечный цикл от R-зубца до R-зубца.
+The dependences of the change in the volume and coordinates of the center of
+mass of the original 3D model, and the sphere and ellipsoid are shown in
+Fig.~\ref{fig:rxyz}, where the t-axis is R-to-R interval of cardiac cycle. 
 % по оси абсцисс
 
-Результаты моделирования изменения импеданса в ходе сердечного цикла представлены на Рис.~\ref{real},Рис.~\ref{fig:sphere},Рис.~\ref{fig:ellipse}.
-Для каждой модели представлены зависимости для электродной системы расположенной вдоль анатомической оси сердца и перпендикулярно ей.
-На этих графиках так же рассматривается сердечный цикл от R-зубца до R-зубца.
+The simulation results of impedance changes during the cardiac cycle are
+presented in Fig. ~\ref{real}, Fig.~\ref{fig:sphere}, Fig.~\ref{fig:ellipse}.
+For each model, dependences are presented for the electrode system located along
+the heart's anatomical axis and perpendicular to it. These graphs also consider
+the cardiac cycle from R-wave to R-wave. 
 
 \begin{figure}[tbph]
     \centering
