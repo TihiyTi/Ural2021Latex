@@ -85,16 +85,17 @@ Moscow, Russia \\
 
 \begin{abstract}
 
-    The development of electrical impedance methods for examining the heart goes in three directions - transthoracic rheocardiography,
-    electrical impedance tomography (EIT), precordial rheocardiography. This is due to the need of medicine for non-invasive methods that allow the monitoring of the hemodynamic characteristics of the heart's activity.
-    This work focuses on the methods of precordial rheocardiography. Geometric models are considered that are used to solve the inverse problem of impedance measurement in precordial rheocardiography.
-    Comparison of various geometrical models of heart blood, namely 3D model, sphere and ellipsoid, obtained by approximating the original 3D model is carried out. The models were compared for volumetric characteristics and displacements of the model's center of mass during the cardiac cycle.
-    Studies have shown that for a given volunteer, an elliptical geometric model of
-    the heart's blood approximates the heart's real 3D geometry with an error of
-    3-5\% and is preferable when assessing hemodynamic parameters
-    Based on the results of electrical impedance modeling, it was concluded that for small electrode systems typical of precordial radial mapping, the ellipse model is preferable, and for longitudinal-transverse mapping with large electrode systems, the sphere model is preferable.
-
-
+    Development of electrical impedance methods for examining heart goes in three directions.
+    These directions are transthoracic rheocardiography, electrical impedance tomography (EIT), and precordial rheocardiography.
+    This bifurcation is due to the need for medicines used in the non-invasive methods that allow monitoring heart’s activity hemodynamic characteristics.
+    This work focuses on the methods of precordial rheocardiography.
+    This research takes into consideration the geometric models which are used to solve the inverse problem of impedance measurement in precordial rheocardiography.
+    The various geometrical models of heart blood (3D model, sphere model and ellipsoid model) which are obtained by approximating the original 3D model, have been compared.
+    The comparison has been done for volumetric characteristics and displacements of the mass model center during the cardiac cycle.
+    The studies have shown that for a given volunteer, an elliptical geometric model of heart blood approximates the heart real 3D geometry with error of 3-5\%.
+    This elliptical geometric model is preferable when assessing hemodynamic parameters.
+    Based on electrical impedance modeling results, it has been concluded that for small electrode systems typical of precordial radial mapping, the ellipse model is preferable.
+    For longitudinal-transverse mapping with large electrode systems, the sphere model is preferable.
 
 \end{abstract}
 
@@ -104,129 +105,99 @@ Moscow, Russia \\
 
 \section{Introduction}
 
-Stroke volume (SV), cardiac output (CO), and ejection fraction (EF) are crucial
-parameters for cardiovascular system assessment. These parameters highlight the circulatory
-dynamics of the heart.
+Stroke volume (SV), cardiac output (CO), and ejection fraction (EF) are crucial parameters for cardiovascular system assessment.
+These parameters highlight the circulatory dynamics of the heart.
 
-Circulatory parameters in clinical research and practice are assessed with CT,
-MRI, and ultrasound. These methods provide loads of valuable diagnostic
-information on the heart. However, continuous monitoring is not possible with
-these methods for financial and dosimetric reasons.
+Circulatory parameters in clinical research and practice are assessed with CT, MRI, and ultrasound.
+These methods provide loads of valuable diagnostic information on the heart.
+However, continuous monitoring with these methods is not possible due to financial and dosimetric reasons.
 
-Thermal dilution through pulmonary artery catheterization (PAC) is a golden
-standard of SV determination. However, a set of non- or minimally invasive
-procedures extensively~\cite{Kobe2019},\cite{Mehta2014}.
+Thermal dilution through pulmonary artery catheterization (PAC) is a golden standard of SV determination.
+However, a set of non-invasive or minimally invasive procedures are extensively used ~\cite{Kobe2019},\cite{Mehta2014}.
 
-LiDCO uses the minimally invasive method: lithium chloride dilution~\cite{Linton1993} .
-Despite its minimal invasiveness, this method has a drawback: the
-system should be calibrated every 8 hours or if the hemodynamic condition has
-changed. Also, one of the counter-indications of LiCl dilution is intolerance to
-lithium. PiCCO and FloTrac use contour analysis of the pressure curve~\cite{Horster2012}, which is
-accessed invasively via the catheter. Valve regurgitation, severe arrhythmia,
-and rapid changes in body temperature may affect the accuracy of measurements.
+LiDCO uses the minimally invasive method which is lithium chloride dilution ~\cite{Linton1993} .
+Despite its minimal invasiveness, this method has a drawback.
+The system should be calibrated when the hemodynamic condition changes or every 8 hours.
+Moreover, one of the counter-indications of LiCl dilution is its intolerance to lithium.
+PiCCO and FloTrac use contour analysis of pressure curve ~\cite{Horster2012}, which is accessed invasively via catheter.
+Valve regurgitation, severe arrhythmia, and rapid changes in body temperature may affect measurements accuracy.
 
+Electrical impedance methods of CVS study are non-invasive and inexpensive.
+Among these methods are transthoracic methods, electrical impedance tomography, and precardial impedance cardiac plethysmography.
 
-Electrical impedance methods of the CVS study are non-invasive and inexpensive.
-Among them are transthoracic methods, electrical impedance tomography, and
-precardial impedance cardiac plethysmography.
+Transthoracic electrical impedance plethysmography (TEIP) traces back to the middle of the XX century.
+It is currently used with minor changes in such apparatus as CardioScreen (Medis) and Rheo-Spectre (Neurosoft).
+Non-invasive methods have few complications when used, but they are not free of drawbacks.
+TEIP method is used to estimate changes and trends when assessing blood parameters.
+However, it is not used in determining the absolute values.
 
-Transthoracic electrical impedance plethysmography (TEIP) traces back to the
-middle of the XX century and is now used with minor changes in such apparatus as
-CardioScreen (Medis) and Rheo-Spectre (Neurosoft). Non-invasive methods have
-fewer complications to use, but not without drawbacks. The TEIP method is used
-to assess changes and trends in assessing blood parameters and not determine the
-absolute values.
+Impedance cardiography (ICG) applies to both lungs and heart studies~\cite{Brown2003, Wu2018}.
+The main disadvantage of using ICG is low spatial resolution in terms of assessing heart hemodynamics problem~\cite{Kircher2019, Rymarczyk2019}.
 
-Impedance cardiography (ICG) applies to both the lungs and the heart studies~\cite{Brown2003, Wu2018}.
-The main disadvantage is low spatial resolution in terms of assessing heart
-hemodynamics problem~\cite{Kircher2019, Rymarczyk2019}.
-
-In 2002, a precardial mapping technique was proposed to expand on electrical
-impedance methods for heart studies.
+In 2002, a precardial mapping technique was proposed to expand electrical impedance methods for heart studies.
 
 \section{Materials and methods}
 
 \subsection{Precardial Impedance Cardiography Methods}
 
-The precardial impedance cardiography combines several methods. Firstly,
-precardial radial mapping method. The electrode systems are located along the
-ventricle projection border onto the chest surface, perpendicular to the border~\cite{Timokhin2014},\cite{Tikhomirov2019}.
-Secondly, longitudinal-transverse mapping, in which one electrode system is
-located on the chest's surface above the heart along the heart's anatomical
-axis, and the other is perpendicular to the axis.
+The precardial impedance cardiography combines several methods.
+Precardial radial mapping method is the first method.
+The electrode systems are located along the ventricle projection border onto the chest surface perpendicular to the border~\cite{Timokhin2014},\cite{Tikhomirov2019}.
+The second method is longitudinal-transverse mapping.
+In this method, one electrode system is located on the chest’s surface above the heart along the heart’s anatomical axis and the other is perpendicular to the axis.
 
-Precardial impedance cardiography is based on the inverse problem of the
-electrical impedance measurements. The geometric model is built based on the a
-priori anatomical data, generally provided via the CT or MRI.
-%рассказать, что можно использовать не свежие данные
-The heart is modeled with a sphere, ellipsoid, or more complex geometry. The
-heart's contraction is represented by changing the parameters of the model, such
-as the radius of the sphere. The experimentally recorded changes in electrical
-impedance during the heart contraction are converted into changes in the
-geometric model parameters based on the solution of the inverse problem, and
-then the volumetric characteristics are estimated.
+Precardial impedance cardiography is based on the inverse problem of the electrical impedance measurements.
+The geometric model is built depending on the priori anatomical data which are generally provided via the CT or MRI.
+Heart is modeled as a sphere, ellipsoid, or more complex geometry.
+Heart contraction is represented by changing the parameters of the model such as the sphere radius.
+The experimentally recorded changes in electrical impedance during heart contraction are converted into changes in the geometric model parameters based on the solution of the inverse problem.
+After that, the volumetric characteristics are estimated.
 
-The complexity of the chest and heart's geometric model forms a larger number of
-parameters that describe the contraction of the heart in more detail. However,
-this requires a larger number of electrode systems to obtain data for solving
-the inverse problem of electrical impedance measurement.
+Complexity of chest and heart geometric models imposes a larger number of parameters that describe heart contraction in more details.
+However, this situation requires a larger number of electrode systems to obtain data for solving the inverse problem of electrical impedance measurement.
 
-Hence, a more complex model allows one to obtain more information and requires
-more electrode systems. A simpler model requires fewer electrode systems but is
-limited in capabilities. It is necessary to find a compromise between the
-model's complexity and the output information of the model.
+Hence, a more complex model allows obtaining more information and requires more electrode systems.
+A simpler model requires fewer electrode systems.
+However, this model is limited in capabilities.
+It is necessary to find a compromise between the model complexity and the output information of the model.
 
-In the monitoring of circulatory characteristics, the vanity and simplicity of
-the technique are often more critical. This paper compares two geometric models
-of a homogeneous half-space with a sphere and ellipsoid inclusions. Both models
-are considered for the method of precordial longitudinal-transverse cardiac
-mapping.
+In circulatory characteristics monitoring, vanity and simplicity of the technique are often more critical.
+This research compares two geometric models of a homogeneous half-space with a sphere and ellipsoid inclusions.
+Both the models are considered for the method of precordial longitudinal-transverse cardiac mapping.
 
 \subsection{Ellipsoid and Sphere models}
 
-In the simulation, the heart's blood is often represented as the sphere in
-electrical impedance measurement problems,
-%[наши статьи]
-as well as in precordial mapping methods~\cite{Tikhomirov2019}
-and electrical impedance tomography of
-the heart.
-%[статьи по томографии]
+In simulation, heart blood is often represented as the sphere in electrical impedance measurement problems, in precordial mapping methods~\cite{Tikhomirov2019}, and in electrical impedance tomography of the heart.
 
-This model is quite simple. According to the tomography data, the sphere's
-parameters are determined - the radius and coordinates of the center. The
-heart's contraction corresponds to a change in the radius of the sphere and
-center's offset.
+This model is quite simple.
+According to the tomography data, sphere’s parameters- the radius and coordinates of the center are determined.
+Heart contraction corresponds to a change in the sphere radius and offset of its center.
 
-Using the ellipsoid model allows for a better approximation of blood in the
-heart before the onset of ventricular systole.
+The ellipsoid model allows a better approximation of blood in the heart before the onset of ventricular systole.
 % статьи по эллипсу
 
-However, the number of model parameters increases - three semiaxes of the
-ellipsoid, coordinates of the center, and rotation of the ellipsoid in space
-compared to one radius and the center's coordinates. The heart's contraction
-corresponds to a change in the semiaxes of the ellipsoid and a shift in its
-center. Also, the ellipsoid can be spatially rotated during contraction.
+However, number of model parameters (three semiaxes of the ellipsoid, coordinates of the center, and rotation of the ellipsoid in space) increases compared to one radius and center’s coordinates.
+Heart contraction corresponds to a change in the semiaxes of the ellipsoid and a shift in its center.
+The ellipsoid can also be spatially rotated during contraction.
 
-The models' geometric parameters were obtained from the data of a CT of a
-healthy volunteer. The study of multispiral computed tomography was carried out
-in Pirogov Moscow City Clinical Hospital  with  Toshiba Aquilion PRIME 160
-and under the patronage of employees of both the clinic and the medical center
-of the BMSTU medical center.
+Models’ geometric parameters were obtained from CT data of a healthy volunteer.
+The study of multi-spiral computed tomography was carried out in Pirogov Moscow City Clinical Hospital using Toshiba Aquilion PRIME 160.
+It was done under patronage of employees of both the clinic and the medical center of the BMSTU medical center.
 
-The study was carried out with the introduction of an iodine-containing contrast
+The study was carried out by introducing an iodine-containing contrast
 agent Optiray 350 mg, 90 ml for the study on inspiration and 90 ml for the study
 on exhalation, 50 ml at a rate of 3.5 ml/sec, and 40 ml at a rate of 3 ml/sec.
 
-The study was carried out on free expiration. As a result of these studies'
-reconstruction, sets of slices with a time resolution of 20 series per cardio
-cycle were obtained, which gives about 35-50 ms between the series. The distance
-between the axial slices was 2.5 mm. The sets of sections were used to
-reconstruct a 3D model of blood in the heart.
+The study was carried out on free expiration.
+As a result of these studies’ reconstruction, sets of slices with a time resolution of 20 series per cardio cycle were obtained which give about 35-50 ms between the series.
+Distance between the axial slices was 2.5 mm.
+The sets of sections were used to reconstruct a 3D model of blood in the heart.
 
 \subsection{Sphere and Ellipsoid Approximation}
-The parameters of the sphere and ellipsoid were obtained by approximating 3D models of the heart's blood.
 
-The sphere was approximated by the criterion of the least square deviation of the sphere boundaries and real 3D geometry.
+Parameters of the sphere and ellipsoid were obtained by approximating 3D models of the heart’s blood.
+
+The sphere was approximated by criterion of the least square deviation of the sphere boundaries and real 3D geometry.
 
 Approximation criterion~\ref{eq:sphere_criteria},
 $p_i$ - a finite set of points on the surface of a 3D heart model,
@@ -237,21 +208,18 @@ $dist(p_i,Z(f))$ -  distance from the point $p_i$ to the surface of the sphere $
 \end{equation}
 
 The ellipsoid was obtained according to the criterion described in~\cite{Bookstein1979}.
-The method is peculiar because authors consider the distance from a point to the
-ellipsoid $dist(p_i, Z(f))$ as follows: the difference between 1) the
-distance from the center of the ellipsoid to the point and 2) the distance from
-the center of the ellipsoid to a point on its boundary. The said point is lying
-on the ray outgoing their center and passing through a given point. This
-assumption's error is estimated depending on the ratio of the ellipsoid
-semiaxes, and an adjustment is made. The final optimization criterion is also
-the least square method (2).
+The method is peculiar because authors consider the distance from a point to the ellipsoid $dist(p_i, Z(f))$ as follows.
 
-Analysis of the results and visualization of the approximation showed that the
-septa of the heart, such as the interventricular septum,
-the atrioventricular septum (Fig.~\ref{fig:wall}) forms points that distort
-the approximation results, causing an increase in the average deviation of the
-surface of the approximating ellipse or sphere from the outer boundary of the 3D
-blood model.
+Difference between the distance from the center of the ellipsoid to the point and the distance from the center of the ellipsoid to a point on its boundary.
+The mentioned point lies on the ray outgoing their center and passing through a given point.
+Error of this assumption is estimated depending on the ratio of the ellipsoid semiaxes and an adjustment is made accordingly.
+The final optimization criterion is also the least square method~\ref{eq:sphere_criteria}.
+
+Analysis of the results and visualization of the approximation showed that the heart septa, such as the inter-ventricular septum, and the atrioventricular septum
+(Fig.~\ref{fig:wall})
+forms points that distort the approximation results.
+This in turn causes increase in the average deviation of the approximating ellipse's surface or the sphere from the outer boundary of the 3D blood model.
+
 %----------------------------------------------------------------------------
 \begin{figure}[tbph]
     \centering
@@ -259,9 +227,9 @@ blood model.
     \caption{3D model of blood in the heart (interventricular septum highlighted in blue)}
     \label{fig:wall}
 \end{figure}
-To eliminate this problem, it was decided to fill in the original 3D models of
-the heart partitions and internal voids. For this, the 3D model was laid out on
-2D images obtained by sectioning by planes parallel to the X and Y axes (Fig.~\ref{fig:algo}).
+
+To eliminate this problem, it was decided to fill in the original 3D models of the heart partitions and internal voids.
+For doing this, the 3D model was laid out on 2D images obtained by sectioning into planes parallel to the X and Y axes(Fig.~\ref{fig:algo}).
 %--------------------------------------------------------
 \begin{figure}[tbph]
     \centering
@@ -271,9 +239,8 @@ the heart partitions and internal voids. For this, the 3D model was laid out on
     \label{fig:algo}
 \end{figure}
 %---------------------------------------------------------
-Then a tangent path traversal was made of the 2D image contour with a circle radius of
-20 mm (red circle), as a result of a set of obtained sections filled with septum
-was going to the 3D image of the heart (Fig.~\ref{fig:algo2}).
+
+After that, a tangent path traversal was made of the 2D image contour with a circle radius of 20 mm (red circle), as a result of a set of obtained sections filled with septum was going to the 3D image of the heart(Fig.~\ref{fig:algo2}).
 
 \begin{figure}[tbph]
     \centering
@@ -286,14 +253,13 @@ was going to the 3D image of the heart (Fig.~\ref{fig:algo2}).
 
 \section{Modelling}
 \subsection{Electrical Impedance modelling parameters}
-To analyze the obtained geometric models, electrical impedance modeling was
-carried out in the Comsol Multiphysics CAD. The location of the electrode
-systems during modeling corresponded to the location of the electrode systems
-during longitudinal-transverse mapping. The distance between the current
-electrodes varied from 80 to 240 mm, and the ratio of the distance between the
-current electrodes to the distance between the potential ones was 2 to 1.
 
-The values of the resistivity of inclusion and homogeneous half-space are presented in the table~\ref{tab:table}.
+To analyze the obtained geometric models, electrical impedance modeling has been carried out using the Comsol Multiphysics CAD.
+Location of the electrode systems during modeling corresponds to location of the electrode systems during longitudinal-transverse mapping.
+The distance between the current electrodes varied from 80 to 240 mm.
+Ratio of distance between the current electrodes to the distance between the potential ones was 2 to 1.
+
+Values of the resistivity of inclusion and homogeneous half-space are presented in table~\ref{tab:table}.
 
 \begin{table}[htbp]
     \caption{Resisitivity values at  100 kHz used in the model study}
@@ -329,18 +295,18 @@ myocardium is possible since measurements are considered in the phase of calm
 expiration, and the specific resistance of the lung tissue on expiration
 approaches the specific resistance of muscle tissue.
 
+Averaging of the specific resistances of lung, muscle tissue, and myocardium is possible since measurements are considered in the phase of calm expiration.
+The specific resistance of lung tissue on expiration approaches the specific resistance of muscle tissue.
+
 \subsection{Comparison of the 3D model with sphere and ellipsoid}
 
-Several parameters were used to compare the models themselves and the results of
-modeling the real 3D geometry of blood in the heart, sphere, and ellipsoid.
-First, a comparison of the change in the volume of blood in the heart  was made.
-the volume of a real 3D model was compared with the volumes of the approximating
-sphere and ellipsoid. The volumes were estimated for each of the 20 points when
-the cardio cycle was split. Second, the movement of blood volume in the heart as
-a whole was considered, i.e. the movement of the center of mass of a real 3D
-model and its approximating figures. Third, the electrical impedance change
-dependencies during the cardiac cycle were compared for different positions and
-sizes of electrode systems.
+Several parameters were used for comparing the models themselves and the results of modeling the real 3D geometry of blood in heart, sphere, and ellipsoid.
+A comparison of the change in the volume of blood in heart was made first.
+Volume of a real 3D model was compared with the volumes of the approximating sphere and ellipsoid.
+The volumes were estimated for each of the 20 points when the cardio cycle was split.
+Second, movement of blood volume in heart as a whole was considered,
+i.e. the movement of mass center of a real 3D model and its approximating figures.
+Third, electrical impedance change dependencies during the cardiac cycle were compared for different positions and sizes of electrode systems.
 
 \begin{figure}[htbp]
 %    \centerline{\includegraphics{fig/fig1.png}}
@@ -351,17 +317,16 @@ sizes of electrode systems.
 
 \section{Results}
 
-The dependences of the change in the volume and coordinates of the center of
-mass of the original 3D model, and the sphere and ellipsoid are shown in
-Fig.~\ref{fig:rxyz}, where the t-axis is R-to-R interval of cardiac cycle.
+Dependences of the change in volume and mass center coordinates of the original 3D model, the sphere, and the ellipsoid are shown in
+Fig.~\ref{fig:rxyz}.
+Where the t-axis is R-to-R interval of cardiac cycle.
 % по оси абсцисс
 
-The simulation results of impedance changes during the cardiac cycle are
+Simulation results of impedance changes during the cardiac cycle are presented in
 %presented in Fig. ~\ref{real}, Fig.~\ref{fig:sphere}, Fig.~\ref{fig:ellipse}.
-presented in Fig. ~\ref{fig:all}.
-For each model, dependences are presented for the electrode system located along
-the heart's anatomical axis and perpendicular to it. These graphs also consider
-the cardiac cycle from R-wave to R-wave.
+ Fig. ~\ref{fig:all}.
+For each model, dependences are presented for the electrode system located along the heart anatomical axis and perpendicular to it.
+These graphs also consider the cardiac cycle from R-wave to R-wave.
 
 \begin{figure}[tbph]
     \centering
@@ -394,15 +359,12 @@ the cardiac cycle from R-wave to R-wave.
 
 \section{Discussion}
 
-When comparing the motion of the center of mass of the original 3D model and the
-approximating sphere and ellipsoid from Fig.~\ref{fig:rxyz} it is seen that the
-center of mass of the ellipsoid moves in accordance with the center of mass of
-the 3D model. The sphere's movement qualitatively corresponds to the movement of
-the 3D model, but quantitatively it differs - less amplitude. The ellipsoid
-volume differs by an average of 3-5\% during the cardiac cycle; for a sphere,
-the difference reaches 12-15\%. This effect can influence and introduce
-additional errors in assessing hemodynamic characteristics based on the sphere's
-geometric model.
+When comparing mass center motion of the original 3D model with the approximating sphere and ellipsoid from Fig.~\ref{fig:rxyz},
+it is noticed that mass center of the ellipsoid moves in accordance with mass center of the 3D model.
+The sphere movement qualitatively corresponds to the 3D model movement, but quantitatively it differs i.e. it has less amplitude.
+The ellipsoid volume differs by an average of 3-5\% during the cardiac cycle.
+The difference in case of the sphere reaches 12-15\%.
+This effect can influence and introduce additional errors in assessing hemodynamic characteristics based on the sphere geometric model.
 
 The waveforms of the electrical impedance modeling signal for the sphere and the
 ellipsoid qualitatively correspond to the initial 3D model waveform but differ
@@ -417,21 +379,24 @@ For large electrode systems
 (200-240 mm), $\Delta Z$ for a 3D model differs by 5-10\% from $\Delta Z$ for a
 sphere and 30\% from $\Delta Z $ for an ellipsoid.%todo заполнить проценты
 
+
+Waveforms of the electrical impedance modeling signal for the sphere and the ellipsoid qualitatively correspond to the initial 3D model waveform.
+However, they differ significantly in amplitude characteristics.
+For a numerical assessment of the obtained simulation results, value of the impedance change during ventricular systole $ \Delta Z $ was compared.
+Difference in values in Fig.~\ref{fig:all}a at the time points corresponds to 0\% and 40\% of the cardiac cycle (beginning and end of ventricular systole).
+For small electrode systems (80-120 mm), $\Delta Z$ for a 3D model differs more than 50\% from $\Delta Z$ for a sphere and 25-30\% from $\Delta Z$ for an ellipsoid.
+For large electrode systems (200- 240 mm), $\Delta Z$ for a 3D model differs by 5-10\% from $\Delta Z$ for a sphere and 30\% from $\Delta Z$ for an ellipsoid.
+
 \section{Conclusion}
 
-Studies have shown that for a given volunteer, an elliptical geometric model of
-the heart's blood approximates the heart's real 3D geometry with an error of
-3-5\% and is preferable when assessing hemodynamic parameters. Simultaneously,
-electrical impedance modeling showed that when using electrode systems 80-120 mm
-in size, it is preferable to use an elliptical geometric model, and when using
-large electrode systems 200-240 mm, it is preferable to use a spherical
-geometric model. Since electrode systems with sizes over 180 mm are usually used
-for precordial longitudinal-transverse mapping, it is necessary to use a
-spherical mathematical model.
+The studies have shown that for a given volunteer, an elliptical geometric model of  heart blood approximates the heart real 3D geometry with error of 3-5\%.
+This elliptical geometric model is preferable when assessing hemodynamic parameters.
+Simultaneously, electrical impedance modeling showed that when using 80-120 mm in size electrode systems, it is preferable to use an elliptical geometric model.
+On the other hand, when using large electrode systems (200-240 mm), it is preferable to use a spherical geometric model.
+Since electrode systems with sizes over 180 mm are usually used for precordial longitudinal-transverse mapping, it is necessary to use a spherical mathematical model.
 
-The conclusions are valid for this volunteer. At the moment, studies are
-underway on three more healthy volunteers to evaluate the findings.
-%An excellent style manual for science writers is \cite{b7}.
+The drawn conclusions are valid for this volunteer.
+At the moment, studies are underway on three more healthy volunteers to evaluate the findings.
 
 %\begin{thebibliography}{00}
 %\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
