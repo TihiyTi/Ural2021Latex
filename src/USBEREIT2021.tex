@@ -170,7 +170,7 @@ Both the models are considered for the method of precordial longitudinal-transve
 In simulation, heart blood is often represented as the sphere in electrical impedance measurement problems, in precordial mapping methods~\cite{Tikhomirov2019}, and in electrical impedance tomography of the heart.
 
 This model is quite simple.
-According to the tomography data, sphere’s parameters- the radius and coordinates of the center are determined.
+According to the tomography data, sphere’s parameters the radius and coordinates of the center are determined.
 Heart contraction corresponds to a change in the sphere radius and offset of its center.
 
 The ellipsoid model allows a better approximation of blood in the heart before the onset of ventricular systole.
@@ -182,7 +182,7 @@ The ellipsoid can also be spatially rotated during contraction.
 
 Models’ geometric parameters were obtained from CT data of a healthy volunteer.
 The study of multi-spiral computed tomography was carried out in Pirogov Moscow City Clinical Hospital using Toshiba Aquilion PRIME 160.
-It was done under patronage of employees of both the clinic and the medical center of the BMSTU medical center.
+%It was done under patronage of employees of both the clinic and the medical center of the BMSTU medical center.
 
 The study was carried out by introducing an iodine-containing contrast
 agent Optiray 350 mg, 90 ml for the study on inspiration and 90 ml for the study
@@ -191,14 +191,14 @@ on exhalation, 50 ml at a rate of 3.5 ml/sec, and 40 ml at a rate of 3 ml/sec.
 The study was carried out on free expiration.
 As a result of these studies’ reconstruction, sets of slices with a time resolution of 20 series per cardio cycle were obtained which give about 35-50 ms between the series.
 Distance between the axial slices was 2.5 mm.
-The sets of sections were used to reconstruct a 3D model of blood in the heart.
+The sets of sections were used to reconstruct a 3D model of blood in the heart~\ref{fig:wall}.
+%Использовалось программное обеспечение ИНОБИНЕК 2.2.1 Профессиональная редакция.
+The software used was INOBITEK 2.2.1 Professional edition.
 
 \subsection{Sphere and Ellipsoid Approximation}
 
 Parameters of the sphere and ellipsoid were obtained by approximating 3D models of the heart’s blood.
-
 The sphere was approximated by criterion of the least square deviation of the sphere boundaries and real 3D geometry.
-
 Approximation criterion~\ref{eq:sphere_criteria},
 $p_i$ - a finite set of points on the surface of a 3D heart model,
 $dist(p_i,Z(f))$ -  distance from the point $p_i$ to the surface of the sphere $Z(f)$.
@@ -208,7 +208,7 @@ $dist(p_i,Z(f))$ -  distance from the point $p_i$ to the surface of the sphere $
 \end{equation}
 
 The ellipsoid was obtained according to the criterion described in~\cite{Bookstein1979}.
-The method is peculiar because authors consider the distance from a point to the ellipsoid $dist(p_i, Z(f))$ as follows.
+The method is peculiar because authors consider the distance from a point to the ellipsoid as follows.
 
 Difference between the distance from the center of the ellipsoid to the point and the distance from the center of the ellipsoid to a point on its boundary.
 The mentioned point lies on the ray outgoing their center and passing through a given point.
@@ -219,17 +219,18 @@ Analysis of the results and visualization of the approximation showed that the h
 (Fig.~\ref{fig:wall})
 forms points that distort the approximation results.
 This in turn causes increase in the average deviation of the approximating ellipse's surface or the sphere from the outer boundary of the 3D blood model.
-
 %----------------------------------------------------------------------------
 \begin{figure}[tbph]
     \centering
-    \includegraphics[width=0.6\linewidth]{fig/wall}
+    \includegraphics[width=0.55\linewidth]{fig/wall}
     \caption{3D model of blood in the heart (interventricular septum highlighted in blue)}
     \label{fig:wall}
 \end{figure}
-
 To eliminate this problem, it was decided to fill in the original 3D models of the heart partitions and internal voids.
-For doing this, the 3D model was laid out on 2D images obtained by sectioning into planes parallel to the X and Y axes(Fig.~\ref{fig:algo}).
+For doing this, the 3D model was laid out on 2D images obtained by sectioning into planes parallel to the X and Y axes (Fig.~\ref{fig:algo}).
+The distance between the planes is 1 mm.
+%Расстояние между плоскостями 1 мм.
+
 %--------------------------------------------------------
 \begin{figure}[tbph]
     \centering
@@ -240,7 +241,11 @@ For doing this, the 3D model was laid out on 2D images obtained by sectioning in
 \end{figure}
 %---------------------------------------------------------
 
-After that, a tangent path traversal was made of the 2D image contour with a circle radius of 20 mm (red circle), as a result of a set of obtained sections filled with septum was going to the 3D image of the heart(Fig.~\ref{fig:algo2}).
+After that, a tangent path traversal was made of the 2D image contour with a circle radius of 20 mm (red circle)(Fig.~\ref{fig:algo2}), as a result of a set of obtained sections filled with septum was going to the 3D image of the heart.
+
+%Затем 3D изображение преобразовывалось в STL модель с количеством граней 5000. Алгоритм реализован в Wolfram Mathematica на основе функции CLOSING.
+Then the 3D image was converted into an STL model with 5000 faces.
+The algorithm is implemented in Wolfram Mathematica based on the function - CLOSING.
 
 \begin{figure}[tbph]
     \centering
@@ -290,10 +295,10 @@ Values of the resistivity of inclusion and homogeneous half-space are presented 
 \end{table}
 %todo поправить список литературы в таблице
 
-The averaging of the specific resistances of the lung, muscle tissue, and
-myocardium is possible since measurements are considered in the phase of calm
-expiration, and the specific resistance of the lung tissue on expiration
-approaches the specific resistance of muscle tissue.
+%The averaging of the specific resistances of the lung, muscle tissue, and
+%myocardium is possible since measurements are considered in the phase of calm
+%expiration, and the specific resistance of the lung tissue on expiration
+%approaches the specific resistance of muscle tissue.
 
 Averaging of the specific resistances of lung, muscle tissue, and myocardium is possible since measurements are considered in the phase of calm expiration.
 The specific resistance of lung tissue on expiration approaches the specific resistance of muscle tissue.
@@ -365,19 +370,18 @@ The sphere movement qualitatively corresponds to the 3D model movement, but quan
 The ellipsoid volume differs by an average of 3-5\% during the cardiac cycle.
 The difference in case of the sphere reaches 12-15\%.
 This effect can influence and introduce additional errors in assessing hemodynamic characteristics based on the sphere geometric model.
-
-The waveforms of the electrical impedance modeling signal for the sphere and the
-ellipsoid qualitatively correspond to the initial 3D model waveform but differ
-significantly in amplitude characteristics. For a numerical assessment of the
-obtained simulation results, the value of the impedance change during
-ventricular systole $ \Delta Z $ was compared. The difference in values in
-Fig.~\ref{fig:all}a at the time points corresponds to 0\% and 40\% of the cardiac
-cycle (beginning and end of ventricular systole). For small electrode systems
-(80-120 mm), $\Delta Z$ for a 3D model differs more then 50\% from $\Delta Z $ for a
-sphere and 25-30\% from $\Delta Z$ for an ellipsoid.
-For large electrode systems
-(200-240 mm), $\Delta Z$ for a 3D model differs by 5-10\% from $\Delta Z$ for a
-sphere and 30\% from $\Delta Z $ for an ellipsoid.%todo заполнить проценты
+%The waveforms of the electrical impedance modeling signal for the sphere and the
+%ellipsoid qualitatively correspond to the initial 3D model waveform but differ
+%significantly in amplitude characteristics. For a numerical assessment of the
+%obtained simulation results, the value of the impedance change during
+%ventricular systole $ \Delta Z $ was compared. The difference in values in
+%Fig.~\ref{fig:all}a at the time points corresponds to 0\% and 40\% of the cardiac
+%cycle (beginning and end of ventricular systole). For small electrode systems
+%(80-120 mm), $\Delta Z$ for a 3D model differs more then 50\% from $\Delta Z $ for a
+%sphere and 25-30\% from $\Delta Z$ for an ellipsoid.
+%For large electrode systems
+%(200-240 mm), $\Delta Z$ for a 3D model differs by 5-10\% from $\Delta Z$ for a
+%sphere and 30\% from $\Delta Z $ for an ellipsoid.%todo заполнить проценты
 
 
 Waveforms of the electrical impedance modeling signal for the sphere and the ellipsoid qualitatively correspond to the initial 3D model waveform.
