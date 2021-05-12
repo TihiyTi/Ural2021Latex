@@ -30,52 +30,65 @@
 \thanks{The reported study was funded by RFBR according to the research project No 18-29-02042.}
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st}  Alexey N. Tikhomirov}
-\IEEEauthorblockA{\textit{Bauman Moscow State} \\
-\textit{Technical University}\\
+\author{\IEEEauthorblockN{Alexey Tikhomirov}
+\IEEEauthorblockA{\textit{Bauman Moscow State Technical} \\
+\textit{University}\\
 Moscow, Russia \\
 tikhomirov.an@bmstu.ru}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Andrey Briko}
-\IEEEauthorblockA{\textit{Bauman Moscow State} \\
-\textit{Technical University}\\
+\IEEEauthorblockN{Andrey Briko}
+\IEEEauthorblockA{\textit{Bauman Moscow State Technical} \\
+\textit{University}\\
 Moscow, Russia \\
 briko@bmstu.ru}
 \and
-\IEEEauthorblockN{3\textsuperscript{rd} Nikolay Seleznev}
-\IEEEauthorblockA{\textit{Bauman Moscow State} \\
-\textit{Technical University}\\
+    \IEEEauthorblockN{Nikolay Seleznev}
+\IEEEauthorblockA{\textit{Bauman Moscow State Technical} \\
+\textit{University}\\
 Moscow, Russia \\
 seleznev.nv@bk.ru}
 \and
-\IEEEauthorblockN{4\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{\ }
+\IEEEauthorblockA{\ }
 \and
-\IEEEauthorblockN{5\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+\IEEEauthorblockN{Arman Petrosyants}
+\IEEEauthorblockA{\textit{Bauman Moscow State Technical} \\
+\textit{University}\\
+Moscow, Russia \\
+petrosyantsaa@student.bmstu.ru}
 \and
-\IEEEauthorblockN{6\textsuperscript{th} Given Name Surname}
-\IEEEauthorblockA{\textit{dept. name of organization (of Aff.)} \\
-\textit{name of organization (of Aff.)}\\
-City, Country \\
-email address or ORCID}
+
+\IEEEauthorblockN{\ \ \ \ \ \ \ \ \ \ \ \newline}
+\IEEEauthorblockA{\ \ \ \ \ \ \ \ \ \ \ \\
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\and
+\IEEEauthorblockN{Sergey Shchukin}
+\IEEEauthorblockA{\textit{Bauman Moscow State Technical} \\
+\textit{University}\\
+Moscow, Russia \\
+0000-0002-9890-5267}
+%\and
+%\IEEEauthorblockN{6\textsuperscript{th} Sergey Shchukin}
+%\IEEEauthorblockA{\textit{Bauman Moscow State Technical} \\
+%\textit{University}\\
+%City, Country \\
+%email address or ORCID}
 }
 
 \maketitle
 
 \begin{abstract}
-    абстракт
-
+    Развитие электроимпедансных методов исследования сердца идет по трем направлениям - трансторакальная реокардиография, электроимпедансная томография (ЭИТ), прекардиальная реокардиография. Это связано с потребностью медицины в неинвазивных методах, позволяющих контролировать гемодинамические характеристики сердечной деятельности.
+    В данной работе основное внимание уделяется методам прекардиальной реокардиографии.
+    Рассмотрены геометрические модели, которые используются для решения обратной задачи измерения импеданса в прекардиальной реокардиографии.
+    Проведено сравнение различных геометрических моделей сердечной крови, а именно 3D-модели, сферы и эллипсоида, полученных путем аппроксимации исходной 3D-модели.
+    Модели сравнивались по объемным характеристикам и смещениям центра масс модели в течение сердечного цикла.
+    Исследования показали, что для данного добровольца эллиптическая геометрическая модель кровь сердца приближается к реальной трехмерной геометрии сердца с ошибкой 3-5 \% и предпочтительнее при оценке показателей гемодинамики.
+    На основании результатов моделирования электрического импеданса был сделан вывод, что для небольших электродных систем, типичных для прекардиального радиального картирования, предпочтительна модель эллипса, а для продольно-поперечного картирования с большими электродными системами предпочтительнее сферическая модель.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+%component, formatting, style, styling, insert
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -87,13 +100,13 @@ component, formatting, style, styling, insert
 Эти методы так же дают много дополнительной информации о сердце, однако мониторинг гемодинамических параметров сердца этими методами не возможен.
 Частые периодические исследования дороги, а в случае с КТ являются вредной лучевой нагрузкой.
 
-Термодилюционный метод с катетеризацией легочной артерии является золотым стандартом на сегодняшний день для оценки ударного выброса, однако  на практике применяется целый ряд инвазивных, малоинвазивных и неинвазивных методов (Kobe, Mishra 2019).
+Термодилюционный метод с катетеризацией легочной артерии является золотым стандартом на сегодняшний день для оценки ударного выброса, однако  на практике применяется целый ряд инвазивных, малоинвазивных и неинвазивных методов ~\cite{Kobe2019},\cite{Mehta2014}.
 
 К минимально инвазивным методам можно отнести следующие методы.
-Метод на основе делюции хлорида лития (Linton, Band 1993) используется в системе LiDCO.
+Метод на основе делюции хлорида лития ~\cite{Linton1993} используется в системе LiDCO.
 К недостаткам системы можно отнести необходимость калибровки каждые 8 часов и при сильных изменениях гемодинамики сердца.
 Также имеются противопоказания, связанные с реакцией организма на литий.
-Системы PiCCO и FloTrac основаны на контурном анализе формы кривой давления, измеряемого инвазивно катетером, однако наличие регургитация клапанов, значительная аритмия и быстро меняющаяся температура влияют на точность измерений, основанных на таком методе.
+Системы PiCCO и FloTrac основаны на контурном анализе формы кривой давления~\cite{Horster2012}, измеряемого инвазивно катетером, однако наличие регургитация клапанов, значительная аритмия и быстро меняющаяся температура влияют на точность измерений, основанных на таком методе.
 
 Электроимпедансные методы исследования сердца и сердечно-сосудистой системы относятся к неинвазивным и недорогим.
 Среди них выделяются трансторакальные методы, электроимпедансная томография и прекардиальная реокардиография.
@@ -102,8 +115,8 @@ component, formatting, style, styling, insert
 Неинвазивные методы имеют меньше осложнений при использовании, но не лишены недостатков.
 В основном метод ТРКГ используется для оценки изменения и наличия трендов при оценке гемодинамики, а не для определения абсолютных значений гемодинамических характеристик.
 
-Метод электроимпедансной кардиографии находит свое применение в исследовании как легких, так и сердца.
-Основным недостатком является низкое пространственное разрешение применительно к задаче оценки гемодинамики сердца.
+Метод электроимпедансной кардиографии находит свое применение в исследовании как легких, так и сердца~\cite{Brown2003, Wu2018}.
+Основным недостатком является низкое пространственное разрешение применительно к задаче оценки гемодинамики сердца~\cite{Kircher2019, Rymarczyk2019}.
 
 Для расширения возможностей электроимпедансных методов исследования деятельности сердца, Стрелковым в 2002 году была предложена методика прекардиального картирования.
 
@@ -113,7 +126,7 @@ component, formatting, style, styling, insert
 
 Прекардиальная реокардиография объединяет несколько методов.
 Во-первых, прекардиальное радиальное картирование.
-Электродные системы располагаются вдоль границы проекции желудочков на поверхность грудной клетки перпендикулярно этой границе.
+Электродные системы располагаются вдоль границы проекции желудочков на поверхность грудной клетки перпендикулярно этой границе~\cite{Timokhin2014},\cite{Tikhomirov2019}.
 Во-вторых, продольно-поперечное картирование, при котором одна электродная система располагается на поверхности грудной клетки над сердцем вдоль анатомической оси сердца, а другая перпендикулярно ей.
 
 Методы прекардиальной реокардиографии основаны на решении обратной задачи электроимпедансометрии.
@@ -143,7 +156,7 @@ component, formatting, style, styling, insert
 %\end{figure}
 
 При моделировании кровь в сердце часто представляется в виде сферы в задачах электроимпедансометрии, как в методах прекардиального картирования,
-%[наши статьи]
+~\cite{Tikhomirov2019}
 так и в методах электроимпедансной томографии сердца.
 %[статьи по томографии]
 Данная модель достаточно проста.
@@ -184,7 +197,7 @@ $dist(p_i,Z(f))$ - расстояние от точки $ p_i$ до поверх
     \label{eq:sphere_criteria}
 \end{equation}
 
-Эллипсоид получался по критерию, описанному в .
+Эллипсоид получался по критерию, описанному в ~\cite{Bookstein1979}.
 %todo добавить ссылку на статью BOOK
 Особенностью метода является то, что авторы рассматривают расстояние от точки до эллипсоида
 $dist(p_i,Z(f))$, как разность между расстоянием от центра эллипсоида до точки и расстоянием от центра
@@ -236,26 +249,26 @@ $dist(p_i,Z(f))$, как разность между расстоянием от
 Значения удельных сопротивлений включения и однородного полупространства представлены в таблице \ref{tab:table}.
 
 \begin{table}[htbp]
-    \caption{RESISTIVITY VALUES AT 100 KHZ USED IN THE MODEL STUDY}
+    \caption{Resisitivity values at  100 kHz used in the model study}
     \begin{center}
         \begin{tabular}{|l|c|c|}
             \hline
             \multirow{2}{*}{\textbf{Tissue}}              &     \textbf{Resistivity values,}      &    \textbf{Resistivity value in}  \\
-            &    \textbf{ Omh*m}     &   \textbf{ simulation, Omh*m }\\
+            &   \textbf{$\Omega \cdot$ m}     &   \textbf{ simulation, $\Omega \cdot$ m} \\
             \hline
-            Blood (Hct=50)           & 1.35 [21]           & 1.35      \\
+            Blood (Hct=50)           & 1.35\cite{Hill1975}           & 1.35      \\
             \hline
-            Myocardium               & 4.6 [20]       & \multirow{7}{*}{4.2}\\
+            Myocardium               & 4.6 \cite{Hasgall}       & \multirow{7}{*}{4.2}\\
             \cline{1-2}
-            \multirow{2}{*}{Muscles} & 2.7 [20]          &     \\
+            \multirow{2}{*}{Muscles} & 2.7 \cite{Hasgall}           &     \\
             \cline{2-2}
-            & 1.5 – 25 [19]           &   \\
+            & 1.5 – 25 \cite{Rush1963}           &   \\
             \cline{1-2}
-            Lung (deflated)          & 3.68 [20]     &         \\
+            Lung (deflated)          & 3.68 \cite{Hasgall}     &         \\
             \cline{1-2}
-            Lung                     & 1.6 – 10 [1]       &    \\
+            Lung                     & 1.6 - 10 \cite{Grimnes2008}       &    \\
             \cline{1-2}
-            Human thorax & \multirow{2}{*}{4.63 [19]}  &   \\
+            Human thorax & \multirow{2}{*}{4.63 \cite{Rush1963} }  &   \\
             (average)   & &   \\
             \hline
         \end{tabular}
@@ -337,15 +350,9 @@ $dist(p_i,Z(f))$, как разность между расстоянием от
 Указанные выводы верны для данного добровольца. На данный момент проводятся исследования еще для трех здоровых добровольцев, чтобы оценить полученные выводы.
 %An excellent style manual for science writers is \cite{b7}.
 
-\begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-\end{thebibliography}
+\bibliographystyle{IEEEtran}
+\bibliography{library}
+
 \vspace{12pt}
 %\color{red}
 %IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
